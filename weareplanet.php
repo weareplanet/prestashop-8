@@ -32,7 +32,7 @@ class WeArePlanet extends PaymentModule
         $this->author = 'wallee AG';
         $this->bootstrap = true;
         $this->need_instance = 0;
-        $this->version = '1.0.3';
+        $this->version = '1.0.4';
         $this->displayName = 'WeArePlanet';
         $this->description = $this->l('This PrestaShop module enables to process payments with %s.');
         $this->description = sprintf($this->description, 'WeArePlanet');
@@ -144,6 +144,7 @@ class WeArePlanet extends PaymentModule
         $output = WeArePlanetBasemodule::handleSaveAll($this);
         $output .= WeArePlanetBasemodule::handleSaveApplication($this);
         $output .= WeArePlanetBasemodule::handleSaveEmail($this);
+        $output .= WeArePlanetBasemodule::handleSaveIntegration($this);
         $output .= WeArePlanetBasemodule::handleSaveCartRecreation($this);
         $output .= WeArePlanetBasemodule::handleSaveFeeItem($this);
         $output .= WeArePlanetBasemodule::handleSaveDownload($this);
@@ -158,6 +159,7 @@ class WeArePlanet extends PaymentModule
     {
         return array(
             WeArePlanetBasemodule::getEmailForm($this),
+            WeArePlanetBasemodule::getIntegrationForm($this),
             WeArePlanetBasemodule::getCartRecreationForm($this),
             WeArePlanetBasemodule::getFeeForm($this),
             WeArePlanetBasemodule::getDocumentForm($this),
@@ -172,6 +174,7 @@ class WeArePlanet extends PaymentModule
         return array_merge(
             WeArePlanetBasemodule::getApplicationConfigValues($this),
             WeArePlanetBasemodule::getEmailConfigValues($this),
+            WeArePlanetBasemodule::getIntegrationConfigValues($this),
             WeArePlanetBasemodule::getCartRecreationConfigValues($this),
             WeArePlanetBasemodule::getFeeItemConfigValues($this),
             WeArePlanetBasemodule::getDownloadConfigValues($this),
@@ -251,6 +254,7 @@ class WeArePlanet extends PaymentModule
         foreach (WeArePlanetHelper::sortMethodConfiguration($methods) as $methodConfiguration) {
             $parameters = WeArePlanetBasemodule::getParametersFromMethodConfiguration($this, $methodConfiguration, $cart, $shopId, $language);
             $parameters['priceDisplayTax'] = Group::getPriceDisplayMethod(Group::getCurrent()->id);
+            $parameters['iframe'] = $cart->iframe;
             $parameters['orderUrl'] = $this->context->link->getModuleLink(
                 'weareplanet',
                 'order',

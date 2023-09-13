@@ -729,6 +729,18 @@ final class ApiClient {
         return $this->customerService;
     }
     
+    protected $deliveryIndicationService;
+
+    /**
+     * @return \WeArePlanet\Sdk\Service\DeliveryIndicationService
+     */
+    public function getDeliveryIndicationService() {
+        if(is_null($this->deliveryIndicationService)){
+            $this->deliveryIndicationService = new \WeArePlanet\Sdk\Service\DeliveryIndicationService($this);
+        }
+        return $this->deliveryIndicationService;
+    }
+    
     protected $humanUserService;
 
     /**
@@ -909,6 +921,18 @@ final class ApiClient {
         return $this->refundCommentService;
     }
     
+    protected $refundService;
+
+    /**
+     * @return \WeArePlanet\Sdk\Service\RefundService
+     */
+    public function getRefundService() {
+        if(is_null($this->refundService)){
+            $this->refundService = new \WeArePlanet\Sdk\Service\RefundService($this);
+        }
+        return $this->refundService;
+    }
+    
     protected $spaceService;
 
     /**
@@ -933,6 +957,30 @@ final class ApiClient {
         return $this->staticValueService;
     }
     
+    protected $tokenService;
+
+    /**
+     * @return \WeArePlanet\Sdk\Service\TokenService
+     */
+    public function getTokenService() {
+        if(is_null($this->tokenService)){
+            $this->tokenService = new \WeArePlanet\Sdk\Service\TokenService($this);
+        }
+        return $this->tokenService;
+    }
+    
+    protected $tokenVersionService;
+
+    /**
+     * @return \WeArePlanet\Sdk\Service\TokenVersionService
+     */
+    public function getTokenVersionService() {
+        if(is_null($this->tokenVersionService)){
+            $this->tokenVersionService = new \WeArePlanet\Sdk\Service\TokenVersionService($this);
+        }
+        return $this->tokenVersionService;
+    }
+    
     protected $transactionCommentService;
 
     /**
@@ -943,6 +991,30 @@ final class ApiClient {
             $this->transactionCommentService = new \WeArePlanet\Sdk\Service\TransactionCommentService($this);
         }
         return $this->transactionCommentService;
+    }
+    
+    protected $transactionCompletionService;
+
+    /**
+     * @return \WeArePlanet\Sdk\Service\TransactionCompletionService
+     */
+    public function getTransactionCompletionService() {
+        if(is_null($this->transactionCompletionService)){
+            $this->transactionCompletionService = new \WeArePlanet\Sdk\Service\TransactionCompletionService($this);
+        }
+        return $this->transactionCompletionService;
+    }
+    
+    protected $transactionIframeService;
+
+    /**
+     * @return \WeArePlanet\Sdk\Service\TransactionIframeService
+     */
+    public function getTransactionIframeService() {
+        if(is_null($this->transactionIframeService)){
+            $this->transactionIframeService = new \WeArePlanet\Sdk\Service\TransactionIframeService($this);
+        }
+        return $this->transactionIframeService;
     }
     
     protected $transactionInvoiceCommentService;
@@ -969,6 +1041,18 @@ final class ApiClient {
         return $this->transactionInvoiceService;
     }
     
+    protected $transactionLightboxService;
+
+    /**
+     * @return \WeArePlanet\Sdk\Service\TransactionLightboxService
+     */
+    public function getTransactionLightboxService() {
+        if(is_null($this->transactionLightboxService)){
+            $this->transactionLightboxService = new \WeArePlanet\Sdk\Service\TransactionLightboxService($this);
+        }
+        return $this->transactionLightboxService;
+    }
+    
     protected $transactionLineItemVersionService;
 
     /**
@@ -981,6 +1065,18 @@ final class ApiClient {
         return $this->transactionLineItemVersionService;
     }
     
+    protected $transactionPaymentPageService;
+
+    /**
+     * @return \WeArePlanet\Sdk\Service\TransactionPaymentPageService
+     */
+    public function getTransactionPaymentPageService() {
+        if(is_null($this->transactionPaymentPageService)){
+            $this->transactionPaymentPageService = new \WeArePlanet\Sdk\Service\TransactionPaymentPageService($this);
+        }
+        return $this->transactionPaymentPageService;
+    }
+    
     protected $transactionService;
 
     /**
@@ -991,6 +1087,18 @@ final class ApiClient {
             $this->transactionService = new \WeArePlanet\Sdk\Service\TransactionService($this);
         }
         return $this->transactionService;
+    }
+    
+    protected $transactionVoidService;
+
+    /**
+     * @return \WeArePlanet\Sdk\Service\TransactionVoidService
+     */
+    public function getTransactionVoidService() {
+        if(is_null($this->transactionVoidService)){
+            $this->transactionVoidService = new \WeArePlanet\Sdk\Service\TransactionVoidService($this);
+        }
+        return $this->transactionVoidService;
     }
     
     protected $userAccountRoleService;
@@ -1015,6 +1123,30 @@ final class ApiClient {
             $this->userSpaceRoleService = new \WeArePlanet\Sdk\Service\UserSpaceRoleService($this);
         }
         return $this->userSpaceRoleService;
+    }
+    
+    protected $webhookListenerService;
+
+    /**
+     * @return \WeArePlanet\Sdk\Service\WebhookListenerService
+     */
+    public function getWebhookListenerService() {
+        if(is_null($this->webhookListenerService)){
+            $this->webhookListenerService = new \WeArePlanet\Sdk\Service\WebhookListenerService($this);
+        }
+        return $this->webhookListenerService;
+    }
+    
+    protected $webhookUrlService;
+
+    /**
+     * @return \WeArePlanet\Sdk\Service\WebhookUrlService
+     */
+    public function getWebhookUrlService() {
+        if(is_null($this->webhookUrlService)){
+            $this->webhookUrlService = new \WeArePlanet\Sdk\Service\WebhookUrlService($this);
+        }
+        return $this->webhookUrlService;
     }
     
 

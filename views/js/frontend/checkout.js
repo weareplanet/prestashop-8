@@ -70,38 +70,38 @@ jQuery(function ($) {
             if (current_method.data('module-name') === 'weareplanet') {
                 postData = "methodId="+current_method.data("weareplanet-method-id");
             }
-            $.ajax({
-                type: 'POST',
-                url: weArePlanetCheckoutUrl,
-                data: postData,
-                dataType: "json",
-                success:  function (response, textStatus, jqXHR) {
-                    if ( response.result === 'success') {
-                        $("#js-checkout-summary").fadeOut("slow", function () {
-                            var div = $(response.preview).hide();
-                            $(this).replaceWith(div);
-                            $("#js-checkout-summary").fadeIn("slow");
-                        });
-                        $("#order-items").fadeOut("slow", function () {
-                            var confirmation = $(response.summary).find("#order-items");
-                            $(confirmation).hide();
-                            $(this).replaceWith(confirmation);
-                            $("#order-items").fadeIn("slow");
-                        });
-                        self.cartHash = response.cartHash
-                    } else {
-                          window.location.href = window.location.href;
+                $.ajax({
+                    type: 'POST',
+                    url: weArePlanetCheckoutUrl,
+                    data: postData,
+                    dataType: "json",
+                    success: function (response, textStatus, jqXHR) {
+                        if (response.result === 'success') {
+                            $("#js-checkout-summary").fadeOut("slow", function () {
+                                var div = $(response.preview).hide();
+                                $(this).replaceWith(div);
+                                $("#js-checkout-summary").fadeIn("slow");
+                            });
+                            $("#order-items").fadeOut("slow", function () {
+                                var confirmation = $(response.summary).find("#order-items");
+                                $(confirmation).hide();
+                                $(this).replaceWith(confirmation);
+                                $("#order-items").fadeIn("slow");
+                            });
+                            self.cartHash = response.cartHash
+                        } else {
+                            window.location.href = window.location.href;
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        window.location.href = window.location.href;
+                        return;
                     }
-                },
-                error:      function (jqXHR, textStatus, errorThrown) {
-                    window.location.href = window.location.href;
-                    return;
-                }
-            });
+                });
+            
             if (current_method.data('module-name') === 'weareplanet') {
                 self.register_method(current_method.data("weareplanet-method-id"), current_method.data("weareplanet-configuration-id"), "weareplanet-"+current_method.data("weareplanet-method-id"));
             }
-
         },
 
         get_selected_payment_method : function () {
@@ -109,8 +109,8 @@ jQuery(function ($) {
         },
 
         register_method : function (method_id, configuration_id, container_id) {
-
-            if (typeof window.weareplanetIFrameCheckoutHandler == 'undefined') {
+            //if redirect was enabled
+            if ($('#weareplanet-iframe-possible-' + method_id).val() == 1) {
                 $('#weareplanet-loader-'+method_id).remove();
                 this.payment_methods[method_id] = {
                     configuration_id : configuration_id,

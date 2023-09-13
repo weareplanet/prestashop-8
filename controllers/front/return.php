@@ -97,13 +97,15 @@ class WeArePlanetReturnModuleFrontController extends ModuleFrontController
         if (! empty($userFailureMessage)) {
             $this->context->cookie->pln_error = $userFailureMessage;
         }
-
-        // Set cart to cookie
+	
+        $order->setCurrentState(Configuration::get(WeArePlanetBasemodule::CK_STATUS_FAILED));
+        
+	// Set cart to cookie
         $originalCartId = WeArePlanetHelper::getOrderMeta($order, 'originalCart');
         if (! empty($originalCartId)) {
             $this->context->cookie->id_cart = $originalCartId;
         }
-
+	
         $this->redirect_after = $this->context->link->getPageLink('order', true, null, "step=3");
     }
 

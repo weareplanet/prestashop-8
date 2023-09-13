@@ -9,7 +9,7 @@
  *}
 <form action="{$orderUrl|escape:'html':'UTF-8'}" class="weareplanet-payment-form" data-method-id="{$methodId|escape:'html':'UTF-8'}">
 	<div id="weareplanet-{$methodId|escape:'html':'UTF-8'}">
-		<input type="hidden" id="weareplanet-iframe-possible-{$methodId|escape:'html':'UTF-8'}" name="weareplanet-iframe-possible-{$methodId|escape:'html':'UTF-8'}" value="false" />
+		<input type="hidden" id="weareplanet-iframe-possible-{$methodId|escape:'html':'UTF-8'}" name="weareplanet-iframe-possible-{$methodId|escape:'html':'UTF-8'}" value="{$iframe|escape:'html':'UTF-8'}" />
 		<div id="weareplanet-loader-{$methodId|escape:'html':'UTF-8'}" class="weareplanet-loader"></div>
 	</div>
 </form>
