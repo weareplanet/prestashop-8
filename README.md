@@ -1,7 +1,7 @@
 # PrestaShop 8 WeArePlanet Integration
 This repository contains the PrestaShop WeArePlanet payment module that enables the shop to process payments with [WeArePlanet](https://www.weareplanet.com/).
 
-## To install module manually by dragging up zip file, please download [.zip archive](https://plugin-documentation.weareplanet.com/weareplanet/prestashop-8/1.0.4/weareplanet.zip) of module with correct structure required by Prestashop installation
+To install module manually by dragging up zip file, please download [.zip archive](https://plugin-documentation.weareplanet.com/weareplanet/prestashop-8/1.0.4/weareplanet.zip) of module with correct structure required by Prestashop installation
 
 ##### To use this extension, a [WeArePlanet](https://www.weareplanet.com/contact/sales) account is required.
 
@@ -12,7 +12,7 @@ This repository contains the PrestaShop WeArePlanet payment module that enables 
 
 ## Documentation
 
-* [English](https://plugin-documentation.weareplanet.com/weareplanet/prestashop-8/1.0.4/docs/en/documentation.html)
+* [Documentation](https://plugin-documentation.weareplanet.com/weareplanet/prestashop-8/1.0.4/docs/en/documentation.html)
 
 ## Support
 
