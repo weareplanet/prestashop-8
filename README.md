@@ -16,12 +16,12 @@ To install module manually by dragging up zip file, please download [.zip archiv
 
 ## Support
 
-Support queries can be issued on the [WeArePlanet support site](https://paymentshub.weareplanet.com/space/select?target=/support).
+For support queries please contact [WeArePlanet support](mailto:support@datatrans.ch?subject=Support%20on%20Prestashop%208%20-%20Topic%3A).
 
 ## License
 
 Please see the [license file](https://github.com/weareplanet/prestashop-8/blob/1.0.4/LICENSE) for more information.
 
-## Other PrestaShop Versions
+## PrestaShop Version 1.7.x
 
-Find the module for different PrestaShop versions [here](../../../prestashop).
+Find the module for PrestaShop version 1.7.x [here](https://github.com/weareplanet/prestashop-1.7).
