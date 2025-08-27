@@ -1,5 +1,5 @@
 # PrestaShop 8 WeArePlanet Integration
-This project has now been archived. Future releases can be found [here](https://github.com/whitelabelGithubOwnerName/prestashop-1.7):
+This project has now been archived. Future releases can be found [here](https://github.com/weareplanet/prestashop):
 
 This repository contains the PrestaShop WeArePlanet payment module that enables the shop to process payments with [WeArePlanet](https://www.weareplanet.com/).
 
